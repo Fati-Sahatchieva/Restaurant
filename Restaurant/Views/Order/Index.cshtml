@@ -1,0 +1,73 @@
+﻿@model IEnumerable<Restaurant.Data.Model.OrderDetails>
+@using Restaurant.Data.Model
+@{
+    ViewData["Title"] = "Поръчки";
+}
+<br />
+<br />
+<h1 class="text-info">Списък с поръчки</h1>
+<br />
+<br />
+<div>
+    <table id="myTable" class="table table-striped border table-hover">
+        <thead>
+            <tr class="table-info">
+                <th>
+                    @Html.DisplayNameFor(model => model.OrderId)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Product.Name)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Order.FirstName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Order.State)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Order.City)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Order.Address)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Order.PhoneNumber)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Order.OrderTotal)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Order.OrderPlaced)
+                </th>
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+               <tr>
+                <td>@item.Order.OrderNo</td>
+                <td>@item.Product.Name</td>
+                <td>@item.Order.FirstName @item.Order.LastName</td>
+                <td>@item.Order.State</td>
+                <td>@item.Order.City</td>
+                <td>@item.Order.Address</td>
+                <td>@item.Order.PhoneNumber</td>
+                <td>@item.Order.OrderTotal.ToString("N2")лв</td>
+                <td>@item.Order.OrderPlaced</td>
+                <td></td>   
+                <td></td>
+               </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+    @*<script>
+        $(document).ready(function () {
+            $('#myTable').DataTable({
+                "paging": true
+            });
+        });
+    </script>*@

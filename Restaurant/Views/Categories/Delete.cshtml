@@ -1,0 +1,34 @@
+﻿@model Restaurant.Data.Model.Category
+
+@{
+    ViewData["Title"] = "Изтрий";
+}
+
+<h2>Изтрий категорията</h2>
+
+<h3>Сигурни ли сте, че искате да изтриете категорията?</h3>
+<form asp-action="Delete" method="post">
+    <div class="p-4 rounded border">
+        <input type="hidden" asp-for="Id" />
+        <div asp-validation-summary="ModelOnly" class="text-danger">
+
+        </div>
+        <div class="form-group row">
+            <div class="col-2">
+                <label asp-for="Name"></label>
+            </div>
+            <div class="col-5">
+                <input asp-for="Name" readonly="readonly" class="form-control" />
+            </div>
+            <span asp-validation-for="Name" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <input type="submit" class="btn btn-danger" value="Изтрий" />
+            <a asp-action="Index" class="btn btn-success">Обратно към списъка</a>
+        </div>
+    </div>
+</form>
+
+@section Scripts{
+    @{ await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

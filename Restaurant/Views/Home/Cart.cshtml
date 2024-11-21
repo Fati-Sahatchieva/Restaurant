@@ -1,0 +1,52 @@
+﻿@using Restaurant.Data.Model
+@model List<Product>
+@{ ViewData["Title"] = "Cart"; }
+
+<h2 style="color:firebrick">Твоята количка</h2>
+
+<br />
+<div class="row">
+    <table class="table" style="color:bisque">
+        <thead>
+            <tr class="table" style="color:bisque" >
+                <th></th>
+                <th style="color: firebrick">Име</th>
+                <th style="color: firebrick">Описание</th>
+                <th style="color: firebrick">Категория</th>
+                <th style="color: firebrick">Цена</th>
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+           @foreach (var item in Model)
+            {
+              <tr class="table" style="color:bisque">
+                <td>
+                  <img src="~/Image/@item.Image" width="200" height="150" />
+                </td>
+                   <td style="color:black">@item.Name</td>
+                   <td style="color:black">@item.Description</td>
+                   <td style="color:black">@item.Category.Name</td>
+                   <td style="color:black">@item.Price</td>
+                   <td>
+                      <a asp-area="" asp-action="Remove" asp-controller="Home" asp-route-id="@item.Id" class="btn btn-danger">
+                       <i class="fas fa-trash-alt"></i>
+                       </a>
+                   </td>
+               </tr>
+            }
+        </tbody>
+    </table>
+</div>
+<div class="row">
+    <div class="col-6">
+        <a asp-action="Products" asp-controller="Home" class="btn btn-success">Обратно към продуктите</a>
+    </div>
+    <div class="col-6 text-right">
+        <h3>Сума</h3>
+        <h3>Общо: @Model.Sum(c => c.Price) </h3>
+        <a  asp-action="Checkout" asp-controller="Order" class="btn btn-info">Поръчай</a>
+    </div>
+</div>
+

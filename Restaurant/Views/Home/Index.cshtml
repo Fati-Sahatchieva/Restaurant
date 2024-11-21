@@ -1,0 +1,69 @@
+﻿@{
+    ViewData["Title"] = "Начало";
+}
+<br />
+<br />
+<div class="text-center">
+    <h2 style="font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; color:firebrick;"> ДОБРЕ ДОШЛИ ПРИ НАС! </h2>
+</div>
+<br />
+<h4 style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif">Нашите специалитети</h4>
+<br />
+<style media="screen">
+
+    .carousel {
+        width: 700px;
+        height: 380px;
+        margin-right: 10px;
+    }
+   .carousel:before {
+            display: block;
+   }
+
+</style>
+
+<body>
+    <div class="container">
+        <div id="demo" class="carousel slide " data-ride="carousel">
+
+            <!-- Indicators -->
+            <ul class="carousel-indicators">
+                <li data-target="#demo" data-slide-to="0" class="active"></li>
+                <li data-target="#demo" data-slide-to="1"></li>
+                <li data-target="#demo" data-slide-to="2"></li>
+            </ul>
+
+            <!-- The slideshow -->
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="~/Image/tel-burger-home.jpg" width="700" height="380" alt="fast food" />
+                    <div class="carousel-caption">
+                        <h3 class="text-right">Телешки бургер</h3>
+                        <p class="text-right">Ще го намерите в нашето меню.</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="~/Image/somga-s-hrupkava-korichka.jpg" width="700" height="380" alt="Siomga" />
+                    <div class="carousel-caption">
+                        <h3 class="text-right" style="color: black;">Хрупкава сьомга</h3>
+                        <p class="text-right" style="color: black;">Ще я намерите в нашето меню.</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="~/Image/sufle.jpg" width="700" height="380" alt="lava cake" />
+                    <div class="carousel-caption">
+                        <h3 class="text-right">Шоколадово суфле</h3>
+                        <p class="text-right">Ще го намерите в нашето меню.</p>
+                    </div>
+                </div>
+            </div>
+
+            <a class="carousel-control-prev" href="#demo" data-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </a>
+            <a class="carousel-control-next" href="#demo" data-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </a>
+        </div>
+    </div>
+</body>
